@@ -7,19 +7,30 @@ const subtract = function(num1, num2) {
 };
 
 const sum = function(numbers) {
-	let sum = 0;
+	/*using loops
+  let sum = 0;
   for(const number of numbers){
     sum += number;
-  }
-  return sum;
+  } */
+  /*using reduce */
+  total = numbers.reduce((previousValue, currentValue) => previousValue + currentValue,0);
+  return total;
 };
 
 const multiply = function(numbers) {
+  /*using a loop to iterate overt the array
   product = numbers[0]
   for (i=1; i < numbers.length; i++){
     product *= numbers[i] 
-  }
-  return product;
+  }*/
+  
+  /*Using array.reduce method
+  product = numbers.reduce((previousValue, currentValue) => previousValue * currentValue);
+  return product;*/
+
+  // using the Array.reduce method coupled with a ternary operator. Numbers.length is used as it says if numbers.length is true (non zero) prcoess the reduce, otherwise return 0
+  return numbers.length ? numbers.reduce((previousValue, currentValue) => previousValue * currentValue) : 0;
+
 };
 
 const power = function(num1, num2) {
